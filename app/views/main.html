@@ -1,20 +1,47 @@
-<style type="text/css">
-.wrapper {
-position: relative;
-margin: 0 auto;
-width: 1306px;
-}
-</style>
-
-<div class="wrapper">
-    <img src="images/ROI-Calculator_a2_01.jpg" alt="">
-    <img src="images/ROI-Calculator_a2_02.jpg" alt="" class="noCal">
-    <!-- <img src="images/ROI-Calculator_a2_03.jpg" alt="" class="cal"> -->
-    <img src="images/btn_cal.png" alt="" class="calBtn" style="left:954px" ng-click="cal()">
-    <img src="images/btn_clear.png" alt="" class="clearBtn" style="left:807px" ng-click="clear()">
-    <input type="text" style="top:317px" ng-model="input[0]">
-    <input type="text" style="top:372px" ng-model="input[1]">
-    <input type="text" style="top:427px" ng-model="input[2]">
-    <input type="text" style="top:482px" ng-model="input[3]">
-    <input type="text" style="top:537px" ng-model="input[4]">
+<!-- <img src="images/ROI-Calculator_a2_03.jpg" alt="" class="cal"> -->
+<div class="powerTwoContainer">
+    <img src="images/thePowerOfTwo.jpg">
+    <div class="calContainer">
+        <h2>Power of Two ROI Calculator</h2>
+        <div class="inputContainer">
+            <div class="row">
+                <label>Your Solution of Developing Hours</label>
+                <input type="text" ng-model="input[0]">
+            </div>
+            <div class="row">
+                <label>Debugging Solution of Hours</label>
+                <input type="text" ng-model="input[1]">
+            </div>
+            <div class="row">
+                <label>Porting a New Solution of Hours</label>
+                <input type="text" ng-model="input[2]">
+            </div>
+            <div class="row">
+                <label>Training New Engineers on OS of Hours</label>
+                <input type="text" ng-model="input[3]">
+            </div>
+            <div class="row">
+                <label>In Certification of Hours</label>
+                <input type="text" ng-model="input[4]">
+            </div>
+            <div class="row">
+                <img src="images/btn_clear.png" alt="" class="clearBtn" style="left:807px" ng-click="clear()">
+                <img src="images/btn_cal.png" alt="" class="calBtn" style="left:954px" ng-click="cal()">
+            </div>
+        </div>
+    </div>
+    <div class="calCharts">
+        <div class="col time">
+            <div class="saved">{{ results.totaltimesaved }}<span class="unit">hr</span></div>
+            <div ac-chart="'pie'" ac-data="timeSavedPie" ac-config="timeSavedPieConfig" id='timePieChart' class='pieChart'></div>
+            <hr>
+            <div ac-chart="'bar'" ac-data="timeSavedBar" ac-config="timeSavedBarConfig" id='timeBarChart' class='barChart'></div>
+        </div>
+        <div class="col cost">
+            <div class="saved"><span class="unit">$</span>{{ results.totalcostsaved }}</div>
+            <div ac-chart="'pie'" ac-data="costSavedPie" ac-config="costSavedPieConfig" id='costPieChart' class='pieChart'></div>
+            <hr>
+            <div ac-chart="'bar'" ac-data="costSavedBar" ac-config="costSavedBarConfig" id='costBarChart' class='barChart'></div>
+        </div>
+    </div>
 </div>

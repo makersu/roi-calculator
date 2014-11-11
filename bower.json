@@ -5,7 +5,9 @@
     "angular": "1.2.16",
     "json3": "~3.3.1",
     "es5-shim": "~3.1.0",
-    "bootstrap": "~3.2.0"
+    "bootstrap": "~3.2.0",
+    "angular-charts": "~0.2.6",
+    "font-awesome": "~4.2.0"
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",

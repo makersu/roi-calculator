@@ -1,0 +1,87 @@
+@charset "utf-8";
+/*============================================
+
+Default Reset & Base Style Sheet
+Last Update 2012-02-02
+
+* Reset Styles
+		- reset
+		- font reset
+* Set up
+* Font-size Setting
+
+============================================*/
+
+/*--------------------------------------------
+Reset Styles
+
+Copyright (c) 2010, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.com/yui/license.html
+version: 3.3.0
+build: 3167
+---------------------------------------------*/
+
+/* reset
+--------------------------------*/
+html{color:#000;background:#FFF;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:normal;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+input,textarea,select{*font-size:100%;}
+legend{color:#000;}
+hr{color:#333; background-color:#333; height:1px; border:none;}
+
+
+/* font reset
+--------------------------------*/
+body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}
+select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;}
+table{font-size:inherit;font:100%;}
+pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
+
+
+/*--------------------------------
+Set up
+--------------------------------*/
+html{background-color:#fff; overflow-y:scroll;}
+body{width:100%; margin:0px auto; background:#fff url(/media/common/bg_body.gif) center top no-repeat; color:#666; font-family:Arial, Helvetica, sans-serif; font-size:11px;}
+#allWrap{width:1002px; min-width:1002px; margin:0px auto; padding-bottom:10px; background:url(/media/common/bg_body.gif) -136px top no-repeat;}
+
+a{color:#0785c4; text-decoration:none; cursor:pointer; outline:none;}
+a:hover{color:#3ba8de; text-decoration:underline;}
+object{outline:none;}
+
+table{width:100%; border-collapse:separate;}
+table[cellspacing='1']{border-spacing:1px;}
+th{font-weight:bold; color:#333; padding:5px;}
+td{color:#666; padding:5px;}
+
+h2{font-size:16px; font-weight:bold; color:#333; margin:10px 0 10px;}
+h3{font-size:14px; font-weight:bold; color:#333; margin:10px 0 7px;}
+h4{font-size:12px; font-weight:bold; color:#333; margin-bottom:5px;}
+h5, h6{font-weight:bold; color:#333;}
+sup{vertical-align:super; padding:0 0.2em;}
+sub{vertical-align:sub; padding:0 0.2em;}
+
+
+/*--------------------------------
+Font-size Setting
+--------------------------------*/
+#sectionWrap.textM{font-size:13px;}
+#sectionWrap.textM h2{font-size:18px;}
+#sectionWrap.textM h3{font-size:16px;}
+#sectionWrap.textM h4{font-size:14px;}
+#sectionWrap.textL{font-size:15px;}
+#sectionWrap.textL h2{font-size:20px;}
+#sectionWrap.textL h3{font-size:18px;}
+#sectionWrap.textL h4{font-size:16px;}

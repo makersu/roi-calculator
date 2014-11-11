@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+/* ~~ this fixed width container surrounds all other divs~~ */
+.container {
+	width: 971px;
+	background: #FFF;
+		overflow: hidden; /* this declaration makes the .container understand where the floated columns within ends and contain them */
+}
+
+
+.sidebar1 {
+	float: left;
+	width: 172px;
+	padding-bottom: 10px;
+}
+.content {
+
+	padding: 0px 8px 8px;
+	width: 563px;
+	float: left;
+}
+
+.topbanner {
+    padding: 0px 8px 8px;
+	width: 765px;
+	float: left;
+}
+
+.sidebar2 {
+	float: left;
+	width: 218px;
+	color:#000;
+		
+}
+
+.sidebar_box {
+	float: left;
+	background: #FC0;
+	border:thick #FC0 solid; 
+	padding:3px 3px 3px 5px;
+	
+}
+
+.blk {color:#000000;
+}
+

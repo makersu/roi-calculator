@@ -6,36 +6,535 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- ROI Use -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <!-- endbower -->
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
     <!-- endbuild -->
+  <!-- end ROI Use -->
     <!-- build:css(.tmp) styles/main.css -->
+    <link rel="shortcut icon" type="image/x-icon" href="http://am.renesas.com/media/common/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="http://am.renesas.com/media/common/favicon.ico">
+    
+    <link rel="stylesheet" type="text/css" href="styles/base.css">
+    <link rel="stylesheet" type="text/css" href="styles/structure-1.0.1.css">
+    
+    <link rel="stylesheet" type="text/css" href="styles/module.css">
+    <link rel="stylesheet" type="text/css" href="styles/layout_type_a.css">
+    <link rel="stylesheet" type="text/css" href="styles/highslide.css">
+    <link rel="stylesheet" type="text/css" href="styles/hs_custom.css">
+  <!-- ROI Use -->
     <link rel="stylesheet" href="styles/main.css">
+  <!-- end ROI Use -->
     <!-- endbuild -->
   </head>
+<!-- ROI Use -->
   <body ng-app="roiCalculatorApp">
+<!-- end ROI Use -->  
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
+    <div id="allWrap">
+      <!-- C05006追加スタイル -->
+      <style type="text/css">
+      #advancedSearch {
+        width: 71px;
+        padding: 13px 0 0 40px;
+        float: right;
+        z-index: 996;
+        position: relative;
+      }
+      #advanceList {
+        background: #eee;
+        padding:10px 15px;
+        -moz-border-radius:10px;
+        -khtml-border-radius:10px;
+        -webkit-border-radius:10px;
+        right:0;
+        position: absolute;
+      }
+      #advanceList > ul {
+          width: 160px;
+      }
+      #advanceList ul li{
+        background:url(/media/common/nav/navi_level2_line_02.gif) left top repeat-x;
+        padding:6px 0 6px 3px;
+        width: 100%
+      }
+      #advanceList ul li.noBg{background:none!important;}
+      #advanceList ul li a.linkTitle{
+        background: url(/media/common/icon_bullet_03.png) right 85% no-repeat;
+        font-weight: bold;
+        padding-right: 17px;
+        font-size:12px;
+      }
+      #searchArea .header {
+        right: 90px;
+      }
+      #searchArea #advance {
+        right: 75px;
+      }
+      </style>
+      <div class="noCssNavi"><p><a href="http://am.renesas.com/products/mpumcu/promotions/micrium/index.jsp#main">Skip to main content</a></p></div>
+      <!-- header -->
+      <div id="header">
+        <div id="headerTop">
+          <div id="corpInfoNav">
+            <ul>
+              <li><a href="http://am.renesas.com/myrenesas/">My Renesas</a></li>
+              <li><a href="http://am.renesas.com/press/">Press Center</a></li>
+              
+                  
+                  <li><a href="http://am.renesas.com/event/">Events</a></li>
+              
+              
+                <li><a href="http://am.renesas.com/career/">Careers</a></li>
+              
+              <li><a href="http://am.renesas.com/ir/">Investor Relations</a></li>
+              
+                  
+                  <li class="end"><a href="http://am.renesas.com/contact/">Contact Us</a></li>
+              
+            </ul>
+          </div>
+          <div id="region">
+            <ul>
+              <li class="select">
+                <ul id="regionSelect" class="boxShadow" style="display: none;">
+                  
+                    <li><a href="http://www.renesas.com/index.jsp">Japan English</a></li>
+                  
+                  
+                  
+                    <li><a href="http://br.renesas.com/">Brazil (Português)</a></li>
+                  
+                  
+                    <li><a href="http://www.renesas.eu/">Europe/Middle East/Africa</a></li>
+                  
+                  
+                    <li><a href="http://japan.renesas.com/">Japan (日本語)</a></li>
+                  
+                  
+                    <li><a href="http://cn.renesas.com/">Mainland China/Hong Kong Region (简体中文)</a></li>
+                  
+                  
+                    <li><a href="http://hk.renesas.com/">Mainland China/Hong Kong Region (English)</a></li>
+                  
+                  
+                    <li><a href="http://ru.renesas.com/">Russia (Россия)</a></li>
+                  
+                  
+                    <li><a href="http://sg.renesas.com/">Singapore/South &amp; Southeast Asia/Oceania</a></li>
+                  
+                  
+                    <li><a href="http://in.renesas.com/">India</a></li>
+                  
+                  
+                    <li><a href="http://kr.renesas.com/">South Korea (한국어)</a></li>
+                  
+                  
+                    <li><a href="http://tw.renesas.com/">Taiwan Region (繁體中文)</a></li>
+                  
+                </ul>
+                <div id="regionMap">
+                  <img class="map" src="images/region_map.png" alt="Map">
+                  
+                    
+                    Americas
+                  
+                  <a href="http://www.renesas.com/map.html" id="regionSelectButton">(Change)</a>
+                </div>
+              </li>
+              <li><a href="http://japan.renesas.com/">日本語</a></li>
+              <li><a href="http://kr.renesas.com/" lang="ko">한국어</a></li>
+              <li><a href="http://cn.renesas.com/" lang="zh-CN">简体中文</a></li>
+              <li><a href="http://tw.renesas.com/" lang="zh-TW">繁體中文</a></li>
+              <li class="end"><a target="_blank" href="https://update.renesas.com/gur/login.do?languageCode=en">Login</a></li>
+            </ul>
+          </div>
+        </div>
+        <p id="companyLogo"><a href="http://am.renesas.com/"><img src="images/logo_renesas.png" alt="Renesas"></a></p>
+        <script language="JavaScript" src="scripts/mbox.js"></script><style>.mboxDefault { visibility:hidden; }</style><script src="scripts/ip(1).json"></script>
+        <div class="mboxDefault" style="visibility: visible; display: block;">
+        <div id="advancedSearch"><a href="http://am.renesas.com/products/mpumcu/promotions/micrium/index.jsp#"><img width="71" height="35" src="images/btn_othersearch_blue01.png" alt=""></a>
+        <div id="advanceList" style="display: none;">
+        
+        
+        <ul>
+          <li class="noBg"><a href="http://am.renesas.com/partner_information/index.jsp" class="linkTitle">Alliance Partner Program</a></li>
+          <li><a href="http://am.renesas.com/req/parametric_search.do?event=init" class="linkTitle">Parametric Search</a></li>
+          <li><a href="http://am.renesas.com/support/software/index.jsp" class="linkTitle">Software Library</a></li>
+          <li><a href="http://am.renesas.com/request?SCREEN_ID=ViewDocumentSearch&EXECUTE_ACTION=search" class="linkTitle">Document Search</a></li>
+          <li><a href="http://tool-support.renesas.com/eng/toolnews/index.html" class="linkTitle">Tool News</a></li>
+          <li><a href="http://am.renesas.com/req/user_confirm_appnote.do?event=init" class="linkTitle">Application Notes &amp; Sample Code Search</a></li>
+          <li><a href="http://am.renesas.com/request?SCREEN_ID=ViewGRSDownloadSearch&EXECUTE_ACTION=search" class="linkTitle">Tool Download</a></li>
+          <li><a href="http://am.renesas.com/request?SCREEN_ID=ViewFAQSearch&EXECUTE_ACTION=search" class="linkTitle">FAQ Search</a></li>
+          <li><a href="http://am.renesas.com/req/obsolete_search.do?event=discontinuedSearch" class="linkTitle">Obsolete/Discontinued Product Search</a></li>
+          <li><a href="http://am.renesas.com/req/other_product_search.do?event=otherProductSearch" class="linkTitle">Non-Renesas Equivalent Product Search</a></li>
         </ul>
-        <h3 class="text-muted">roiCalculator</h3>
+        
+        </div>
+        </div>
+        </div>
+        <script type="text/javascript">
+          mboxCreate('Top_Other_Search');
+        </script><div id="mboxMarker-default-Top_Other_Search-0" style="visibility:hidden;display:none">&nbsp;</div><script src="scripts/standard" language="JavaScript"></script>
+        <div id="searchArea">
+          <form method="post" action="http://am.renesas.com/req/search.do" class="searchAreaForm header" id="searchAreaForm" name="searchAreaForm">
+            <input name="q" type="text" class="textField" id="textField" value="Search by keyword or Part Name">
+            <input name="btn" type="button" id="btn" class="btn" onclick="keyWordSearch();return false;" value="">
+          </form>
+          <!-- C05006 検索Boxの近くにAdvancedSearch部分を削除する-->
+          <!-- 
+          <div id="advance" class="boxShadow">
+            <p><a href="/search/">Advanced Search</a></p>
+          </div>
+           -->
+          <input type="hidden" id="Def" value="Search by keyword or Part Name">
+        </div>
       </div>
+      <!-- /header -->
 
-      <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
-
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+      <!-- navi -->
+      <div id="nav">
+        <ul id="level1">
+          <li id="l1">
+                <a href="http://am.renesas.com/products/index.jsp" class="here"><span class="none">Products</span></a>
+          </li>
+          <li id="l2">
+                <a href="http://am.renesas.com/applications/index.jsp"><span class="none">Applications</span></a>
+          </li>
+          <li id="l3">
+                <a href="http://am.renesas.com/products/tools/index.jsp"><span class="none">Development Tools</span></a>
+          </li>
+          <li id="l4">
+                <a href="http://am.renesas.com/support/index.jsp" class=""><span class="none">Support/Design</span></a>
+          </li>
+          <li id="l5">
+                <a href="http://am.renesas.com/buy/index.jsp" class=""><span class="none">Buy/Sample</span></a>
+          </li>
+          <li id="l6">
+                <a href="http://am.renesas.com/comp/index.jsp" class=""><span class="none">About Renesas</span></a>
+          </li>
+        </ul>
       </div>
+      <!-- /navi -->
+      <!-- navi level2 -->
+      <div id="level2" style="width:1002px">
+        <!-- navi_01 -->
+        <div id="navi_01" class="chapter">
+          <div class="chapterBox clearfix">
+            <div class="row first">
+              <ul>
+                <li class="noBg"><a href="http://am.renesas.com/products/index.jsp" class="linkTitle">Products Overview</a></li>
+                <li><a href="http://am.renesas.com/products/mpumcu/index.jsp" class="linkTitle">Microcontrollers (MCU) and Microprocessors (MPU)</a>
+                  <ul>
+                    <li>8, 16-bit Ultra-low-power MCUs
+                      <ul class="mt00">
+                        <li class="inline pr15"><a href="http://am.renesas.com/products/mpumcu/rl78/index.jsp">RL78</a></li>
+                        <li class="inline pr15"><a href="http://am.renesas.com/products/mpumcu/78k/index.jsp">78K</a></li>
+                        <li class="inline pr15"><a href="http://am.renesas.com/products/mpumcu/r8c/index.jsp">R8C</a></li>
+                        <li class="inline pr15"><a href="http://am.renesas.com/products/mpumcu/index.jsp#others">Other</a></li>
+                      </ul>
+                    </li>
+                    <li class="pt05">32-bit CISC MCUs
+                      <ul class="mt00">
+                        <li class="inline pr15"><a href="http://am.renesas.com/products/mpumcu/rx/index.jsp">RX</a></li>
+                        <li class="inline pr15"><a href="http://am.renesas.com/products/mpumcu/index.jsp#others">Other</a></li>
+                      </ul>
+                    </li>
+                    <li class="pt05">32-bit RISC MCUs &amp; MPUs
+                      <ul class="mt00">
+    <li class="inline pr15"><a href="http://am.renesas.com/products/mpumcu/rz/index.jsp">RZ</a></li>
+                        <li class="inline pr15"><a href="http://am.renesas.com/products/mpumcu/v850/index.jsp">V850</a></li>
+                        <li class="inline pr15"><a href="http://am.renesas.com/products/mpumcu/superh/index.jsp">SuperH</a></li>
+                        <li class="inline pr15 nobr"><a href="http://am.renesas.com/products/mpumcu/rh850/index.jsp">RH850 (Automotive Only)</a></li>
+                        <li class="inline pr15"><a href="http://am.renesas.com/products/mpumcu/index.jsp#others">Other</a></li>
+                      </ul>
+                    </li>
+                    <li class="pt05"><a href="http://am.renesas.com/products/smartcard_new/index.jsp">Secure MCUs</a></li>
+
+
+    <li><a href="http://am.renesas.com/products/mpumcu/capacitive_touch_mcu/index.jsp">Capacitive Touch MCUs</a></li>
+
+                    <li><a href="http://am.renesas.com/products/smart_analog/index.jsp">Smart Analog</a></li>
+                  </ul>
+                </li>
+                <li><a href="http://am.renesas.com/products/discrete/index.jsp" class="linkTitle">Power Devices</a>
+                  <ul>
+                    <li><a href="http://am.renesas.com/products/discrete/pmosfet/index.jsp">Power MOSFETs</a></li>
+                    <li><a href="http://am.renesas.com/products/discrete/pmosfet/automobile/index.jsp">Power MOSFETs for Automotive</a></li>
+                    <li><a href="http://am.renesas.com/products/discrete/igbt/index.jsp">IGBTs</a></li>
+                    <li><a href="http://am.renesas.com/products/discrete/ipd/index.jsp">Intelligent Power Devices</a></li>
+                    <li><a href="http://am.renesas.com/products/discrete/thyristor_triac/index.jsp">Thyristors &amp; Triacs</a></li>
+                    <li><a href="http://am.renesas.com/products/discrete/transistor/index.jsp">Transistor</a></li>
+                    <li><a href="http://am.renesas.com/products/discrete/diode/index.jsp">Diodes</a></li>
+                  </ul>
+                </li>
+              <li><a href="http://am.renesas.com/buy/cel.html" class="linkTitle">RF Devices</a></li>
+              </ul>
+            </div>
+            <div class="row">
+              <ul>
+                        
+                <li class="noBg"><a href="http://am.renesas.com/products/standard_ic/index.jsp" class="linkTitle">Analog ICs</a>
+                  <ul>
+                    <li><a href="http://am.renesas.com/products/standard_ic/linear/index.jsp">General-purpose Linear</a></li>
+                    <li><a href="http://am.renesas.com/products/standard_ic/logic/index.jsp">General-purpose Logic</a></li>
+                    
+                  </ul>
+                </li>
+                  <li><a href="http://am.renesas.com/products/mix_sig/index.jsp" class="linkTitle">Analog &amp; Mixed signal</a>
+                  <ul>
+                    <li><a href="http://am.renesas.com/products/mix_sig/powermanagement/index.jsp">Power Management</a></li>
+                    <li><a href="http://am.renesas.com/products/mix_sig/driver_ic/index.jsp">Driver ICs</a></li>
+                    <li><a href="http://am.renesas.com/products/mix_sig/automotive_analog/index.jsp">Analog ICs for Automotive</a></li>
+                    <li><a href="http://am.renesas.com/products/mix_sig/index.jsp#other">and more</a></li>
+                  </ul>
+                </li>
+                            
+                <li><a href="http://am.renesas.com/buy/cel.html" class="linkTitle">Optoelectronics</a>
+                  
+                </li>
+                <li><a href="http://am.renesas.com/products/soc/index.jsp" class="linkTitle">System LSI</a>
+                  <ul>
+                    <li><a href="http://am.renesas.com/products/soc/assp/automotive/index.jsp">LSI for Automotive</a></li>
+                    <li><a href="http://am.renesas.com/products/soc/assp/mobile/index.jsp">LSI for Communications and Mobile Devices</a></li>
+                    <li><a href="http://am.renesas.com/products/soc/assp/fa_lsi/index.jsp">LSI for Factory Automation</a></li>
+                  </ul>
+                </li>
+                <li><a href="http://am.renesas.com/products/memory/index.jsp" class="linkTitle">Memory</a></li>
+                <li><a href="http://am.renesas.com/products/soc/asic/index.jsp" class="linkTitle">ASIC</a></li>
+    <li><a href="http://am.renesas.com/products/soc/usb_assp/index.jsp" class="linkTitle">USB ASSP</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- navi_02 -->
+        <div id="navi_02" class="chapter">
+          <div class="chapterBox clearfix">
+            <div class="row first">
+              <ul>
+                <li class="noBg"><a href="http://am.renesas.com/applications/index.jsp" class="linkTitle">Applications Overview</a></li>
+                <li><a href="http://am.renesas.com/applications/key_technology/index.jsp" class="linkTitle">Key Technology</a>
+                  <ul>
+                    <li><a href="http://am.renesas.com/applications/key_technology/connectivity/index.jsp">Connectivity</a></li>
+                    <li><a href="http://am.renesas.com/applications/key_technology/motor_control/index.jsp">Motors</a></li>
+                    <li><a href="http://am.renesas.com/applications/key_technology/power_supply/index.jsp">Power Supply</a></li>
+                    <li><a href="http://am.renesas.com/applications/key_technology/human_interface/index.jsp">Human Interface</a></li>
+                    <li><a href="http://am.renesas.com/buy/cel.html">RF front End</a></li>
+                  </ul>
+                </li>
+                <li><a href="http://am.renesas.com/applications/index.jsp" class="linkTitle">Applications</a>
+                  <ul>
+                    <li><a href="http://am.renesas.com/applications/healthcare/index.jsp">Healthcare</a></li>
+                    <li><a href="http://am.renesas.com/applications/appliances/index.jsp">Appliances</a></li>
+                    <li><a href="http://am.renesas.com/applications/building_management/index.jsp">Building Management</a></li>
+                    <li><a href="http://am.renesas.com/applications/industrial_equipment/index.jsp">Industrial &amp; Home</a></li>
+                    <li><a href="http://am.renesas.com/applications/automotive/index.jsp">Automotive</a></li>
+                    <li><a href="http://am.renesas.com/applications/consumer/index.jsp">Consumer</a></li>
+                    <li><a href="http://am.renesas.com/applications/computer_peripherals/index.jsp">PC &amp; PC Peripherals</a></li>
+                    <li><a href="http://am.renesas.com/applications/mobile_phone/index.jsp">Mobile</a></li>
+                    <li><a href="http://am.renesas.com/products/security/boardid/index.jsp">Security</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="row">
+              <ul>
+                <li class="noBg"><a href="http://am.renesas.com/smart/index.jsp" class="linkTitle">Smart Society</a></li>
+              </ul>
+              <ul class="banner border">
+                <li class="noBg"><a href="http://am.renesas.com/edge_ol/index.jsp" class="linkTitle"><img src="images/navi_banner_edge.jpg" alt="EDGE"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- navi_03 -->
+        <div id="navi_03" class="chapter">
+          <div class="chapterBox clearfix">
+            <div class="row first">
+              <ul>
+                <li class="noBg"><a href="http://am.renesas.com/products/tools/index.jsp" class="linkTitle">Development Tools Overview</a></li>
+                <li><a href="http://am.renesas.com/products/tools/index.jsp#t01" class="linkTitle">Find by Tool Category</a>
+                  <ul>
+                    <li><a href="http://am.renesas.com/products/tools/introductory_evaluation_tools/index.jsp">Starter Kits &amp; Platforms</a></li>
+                    <li><a href="http://am.renesas.com/products/tools/os_middleware/index.jsp">OS</a></li>
+                    <li><a href="http://am.renesas.com/products/tools/middleware_and_drivers/index.jsp">Middleware &amp; Drivers</a></li>
+                    <li><a href="http://am.renesas.com/products/tools/ide/index.jsp">IDEs and Project Managers</a></li>
+                    <li><a href="http://am.renesas.com/products/tools/coding_tools/index.jsp">Coding Tools</a></li>
+
+                    <li><a href="http://am.renesas.com/products/tools/emulation_debugging/index.jsp">Emulation and Debugging</a></li>
+                    <li><a href="http://am.renesas.com/products/tools/flash_prom_programming/index.jsp">Flash and PROM Programming</a></li>
+                  </ul>
+                </li>
+              
+              </ul>
+            </div>
+            <div class="row">
+              <ul>
+                <li class="noBg"><a href="http://am.renesas.com/products/tools/index.jsp#t02" class="linkTitle">Find by MCU/MPU</a>
+                  <ul>
+                    <li><a href="http://am.renesas.com/products/mpumcu/rx/peer/manual_softtools_index.jsp">RX</a></li>
+                    <li><a href="http://am.renesas.com/products/mpumcu/rl78/peer/tools.html">RL78</a></li>
+                    <li><a href="http://am.renesas.com/products/mpumcu/78k/peer/manual_softtools_index.jsp">78K</a></li>
+                    <li><a href="http://am.renesas.com/products/mpumcu/r8c/peer/manual_softtools_index.jsp">R8C</a></li>
+                    <li><a href="http://am.renesas.com/products/mpumcu/rz/peer/manual_softtools_index.jsp">RZ</a></li>
+                    <li><a href="http://am.renesas.com/products/mpumcu/superh/peer/manual_softtools_index.jsp">SuperH</a></li>
+                    <li><a href="http://am.renesas.com/products/mpumcu/v850/peer/manual_softtools_index.jsp">V850</a></li>
+                    <li><a href="http://am.renesas.com/products/mpumcu/rh850/peer/manual_softtools_index.jsp">RH850 (Automotive only)</a></li>
+                    <li><a href="http://am.renesas.com/products/mpumcu/720/peer/manual_softtools_index.jsp">720</a></li>
+                    <li><a href="http://am.renesas.com/products/mpumcu/740/peer/manual_softtools_index.jsp">740</a></li>
+                    <li><a href="http://am.renesas.com/products/mpumcu/h8/peer/manual_softtools_index.jsp">H8</a></li>    
+                    <li><a href="http://am.renesas.com/products/mpumcu/h8s/peer/manual_softtools_index.jsp">H8S</a></li> 
+                    <li><a href="http://am.renesas.com/products/mpumcu/h8sx/peer/manual_softtools_index.jsp">H8SX</a></li>
+                    <li><a href="http://am.renesas.com/products/mpumcu/m16c/peer/manual_softtools_index.jsp">M16C</a></li>
+                    <li><a href="http://am.renesas.com/products/mpumcu/m32r/peer/manual_softtools_index.jsp">M32R</a></li>          <li><a href="http://am.renesas.com/products/smartcard_new/peer/manual_softtools_index.jsp">R-Secure</a></li>
+                    <li><a href="http://am.renesas.com/applications/automotive/peer/manual_softtools_index.jsp">Automotive Applications</a></li>
+                    <li><a href="http://am.renesas.com/products/smart_analog/index.jsp">Smart Analog</a></li>                 
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- navi_04 -->
+        <div id="navi_04" class="chapter active" style="display: none;">
+          <div class="chapterBox clearfix">
+            <div class="row first" style="min-height: 380px;">
+              <ul>
+                <li class="noBg"><a href="http://am.renesas.com/support/index.jsp" class="linkTitle">Support/Design Overview</a></li>
+                <li class="noBg"><a href="http://am.renesas.com/support/plp/index.jsp" class="linkTitle">Product Longevity Program (PLP)</a></li>
+                <li><a href="http://am.renesas.com/support/software/index.jsp" class="linkTitle">Software Library</a></li>
+                <li><a href="http://am.renesas.com/support/rom_code_procedures/index.jsp" class="linkTitle">ROM Code Procedures</a></li>
+                <li><a href="http://www.renesasinteractive.com/" class="linkTitle" target="_blank">Renesas Interactive eLearning</a></li>
+                <li><a href="http://am.renesas.com/edge_ol/index.jsp" class="linkTitle">RENESAS EDGE</a></li>
+                <li class="linkBlankO"><a href="http://www.youtube.com/profile?user=RenesasPresents" class="linkTitle" target="_blank">YouTube Official Renesas Channel</a></li>
+                <li><a href="http://am.renesas.com/contact/" class="linkTitle">Contact Us</a></li>
+    <li><a href="http://am.renesas.com/products/common_info/reliability/index.jsp" class="linkTitle">Quality &amp; Reliability</a></li>
+
+    <li><a href="http://am.renesas.com/products/package/index.jsp" class="linkTitle">Package Items</a></li>
+
+    <li><a href="http://am.renesas.com/products/lead/index.jsp" class="linkTitle">REACH, RoHS, Lead-free/Halogen-free</a></li>
+    <li><a href="https://knowledgebase.am.renesas.com/" class="linkTitle" target="_blank">Renesas Knowledgebase</a></li>
+      <li><a href="http://am.renesas.com/partner_information/index.jsp" class="linkTitle">Alliance Partner</a></li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- navi_05 -->
+        <div id="navi_05" class="chapter" style="display: none;">
+          <div class="chapterBox clearfix">
+            <div class="row first" style="min-height: 144px;">
+              <ul>
+                <li class="noBg"><a href="http://renesassamples.com/" class="linkTitle" target="_blank">Find Samples</a></li>
+                <li><a href="https://www.buyrenesas.com/" class="linkTitle" target="_blank">Buy Renesas</a></li>
+                            <li><a href="http://am.renesas.com/req/ecommerceTree_search.do" class="linkTitle">Distributor Stock</a></li>
+                <li><a href="http://am.renesas.com/buy/index.jsp" class="linkTitle">Find Distributors and Sales Representatives</a></li>
+                <li><a href="http://am.renesas.com/contact/" class="linkTitle">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- navi_06 -->
+        <div id="navi_06" class="chapter" style="display: none;">
+          <div class="chapterBox clearfix">
+            <div class="row first" style="min-height: 170px;">
+              <ul>
+                <li class="noBg"><a href="http://am.renesas.com/comp/index.jsp" class="linkTitle">About Renesas</a></li>
+                <li><a href="http://am.renesas.com/comp/profile/index.jsp" class="linkTitle">Corporate Outline</a></li>
+                <li><a href="http://am.renesas.com/comp/csr_eco/index.jsp" class="linkTitle">CSR and Environmental Activities</a></li>
+                <li><a href="http://am.renesas.com/comp/procurement/index.jsp" class="linkTitle">Procurement</a></li>
+                <li><a href="http://am.renesas.com/comp/whats_semiconductors/index.jsp" class="linkTitle">What Are Semiconductors?</a></li>
+                            <li><a href="http://am.renesas.com/comp/csr_eco/first/index.jsp" class="linkTitle">FIRST</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /navi level2 -->
+
+      <div id="main">
+        <style type="text/css">
+          #pageTitle #partNo{float:left; max-width:964px; word-wrap:break-word;}
+          #pageTitle #partNo h1{width:auto; max-width:964px; word-wrap:break-word;}
+          #pageTitle #rightParts{float:right; max-width:964px;}
+          #pageTitle #rightParts #pageAction{float:right;}
+          #socialWidget{display:inline;}
+          #pageTitle #myFavorites{float:right; margin-right:10px;}
+        </style>
+        <div id="location">
+          <!-- breadcrumb -->
+          <ul id="breadCrumb">
+              
+            <li><a href="http://am.renesas.com/index.jsp">Home</a></li>
+            
+            <li><a href="http://am.renesas.com/products/index.jsp">Products</a></li>
+            
+            <li><a href="http://am.renesas.com/products/mpumcu/index.jsp">Microcontrollers (MCU) and Microprocessors (MPU)</a></li>
+            
+            <li class="last"><a href="http://am.renesas.com/products/mpumcu/promotions/index.jsp">Promotions</a></li>
+          </ul>
+
+          <!-- /breadcrumb -->
+          <div id="pageTitle">
+            <div id="partNo">
+              <h1>
+                The Power of Two
+                
+              </h1>
+            </div>
+          
+            <!-- location right Parts -->
+            <div id="rightParts">
+              <div id="textChange">
+                <ul>   <li id="text_s" class="on">Small</li>   <li id="text_m">Medium</li>   <li id="text_l">Large</li>  </ul>
+              </div>
+              <ul id="pageAction">
+                <li class="feedback" style="background:url(/onlineopinionV5/oo_icon.gif) no-repeat;}"><a href="javascript:void(0);" onclick="oo_feedback.show()">Provide feedback</a></li>
+                <li class="print">
+                  <a href="" onclick="javascript: window.open(&#39;/_print_this_page_/products/mpumcu/promotions/micrium/index.jsp&#39;, &#39;&#39;, &#39;height=700,width=750,menubar,scrollbars,resizable,left=10,top=10&#39;); return false" target="_blank">
+                    Print this page
+                  </a>
+                </li>
+              </ul>
+
+              <div id="socialWidget">
+                <!-- 1 -->
+                <div id="share">Share:</div>
+
+                <!-- AddThis Button BEGIN -->
+                <div class="addthis_toolbox addthis_default_style addthis_16x16_style">
+                  <a class="addthis_button_facebook at300b" title="Facebook" href="http://am.renesas.com/products/mpumcu/promotions/micrium/index.jsp#"><span class="at16nc at300bs at15nc at15t_facebook at16t_facebook"><span class="at_a11y">Share on facebook</span></span></a>
+                  <a class="addthis_button_twitter at300b" title="Tweet" href="http://am.renesas.com/products/mpumcu/promotions/micrium/index.jsp#"><span class="at16nc at300bs at15nc at15t_twitter at16t_twitter"><span class="at_a11y">Share on twitter</span></span></a>
+                  <a class="addthis_button_google_plusone_share at300b" href="http://www.addthis.com/bookmark.php?v=300&winname=addthis&pub=ra-5296963b559f9c5b&source=tbx-300&lng=zh-TW&s=google_plusone_share&url=http%3A%2F%2Fam.renesas.com%2Fproducts%2Fmpumcu%2Fpromotions%2Fmicrium%2Findex.jsp&title=The%20Power%20of%20Two%20%7C%20Renesas%20Electronics%20America&ate=AT-ra-5296963b559f9c5b/-/-/546088dc8f01ed8c/2&frommenu=1&uid=546088dcf087a234&ct=1&pre=http%3A%2F%2Fam.renesas.com%2Fproducts%2Fmpumcu%2Fpromotions%2Findex.jsp&tt=0&captcha_provider=nucaptcha" target="_blank" title="Google+"><span class="at16nc at300bs at15nc at15t_google_plusone_share at16t_google_plusone_share"><span class="at_a11y">Share on google_plusone_share</span></span></a>
+                  <a class="addthis_button_compact at300m" href="http://am.renesas.com/products/mpumcu/promotions/micrium/index.jsp#"><span class="at16nc at300bs at15nc at15t_compact at16t_compact"><span class="at_a11y">More Sharing Services</span></span></a>
+                  <div class="atclear"></div>
+                </div>
+                <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+                <script type="text/javascript" src="scripts/addthis_widget.js"></script><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe id="_atssh529" title="AddThis utility frame" src="data/sh178.html" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0px; left: 0px; top: 0px;"></iframe></div><script type="text/javascript" src="scripts/core162.js"></script>
+                <script type="text/javascript">
+                var addthis_config = { services_exclude: 'email, print'}</script>
+
+
+                <!-- AddThis Button END -->
+              </div>
+            </div>
+            <!-- /location right Parts -->
+          </div>
+        </div>
+
+      <!-- ROI Calculator -->
+        <div id="sectionWrap">
+          <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
+        </div><!-- end sectionWrap -->
+      <!-- end ROI Calculator -->
+      </div><!-- end main -->
     </div>
 
 
@@ -57,12 +556,15 @@
     <![endif]-->
     <!-- endbuild -->
 
+  <!-- ROI Use -->
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/json3/lib/json3.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/angular-charts/dist/angular-charts.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -70,5 +572,6 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <!-- endbuild -->
+  <!-- ROI Use -->
 </body>
 </html>

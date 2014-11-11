@@ -1,0 +1,124 @@
+@charset "utf-8";
+/*============================================
+
+Style Sheet for Normal Layout
+Last Update 2012-02-03
+
+* section Adjust
+* Selector
+* menuList
+* clearfix
+
+============================================*/
+/*--------------------------------
+section Adjust
+--------------------------------*/
+#sectionWrap{background:url(/media/common/bg_section_01.gif) left top repeat-y;}
+#sectionWrap.bgTypeA2{background-image:url(/media/common/bg_section_a2.gif);}
+#sectionWrap.bgTypeA3{background-image:url(/media/common/bg_section_a3.gif);}
+#leftSection{float:left; width:170px; background-color:#5982ad; -moz-border-radius-bottomleft:5px; -webkit-border-bottom-left-radius:5px; -moz-border-radius-topleft:5px; -webkit-border-top-left-radius:5px;}
+#rightSection{float:right; width:813px; -moz-border-radius-bottomleft:5px; -webkit-border-bottom-left-radius:5px; -moz-border-radius-topleft:5px; -webkit-border-top-left-radius:5px;}
+#rightSection .RLsection{float:left; width:620px; padding:15px 11px 0;}
+#rightSection .noPadding{width:593px; padding:0!important;}
+#rightSection .RRsection{float:right; width:170px;}
+.typeA3 .RRsection{width:220px!important;}
+#rightSection .RRsection .collapeList{width:210px;}
+.typeA2,.tab_content{background:url(/media/common/bg_section_02.gif) right top repeat-y;}
+.typeA3{background:url(/media/common/bg_section_03.gif) 593px top repeat-y!important;}
+/*#selectorResult{width:813px;}*/
+
+
+/*--------------------------------
+Selector
+--------------------------------*/
+#rightSection #selector{padding-right:0!important; position:relative;}
+#rightSection #selectLevel1 .seriesSet{width:700px;}
+#rightSection #selector .paramBox{width:250px;}
+#rightSection #selector .paramSet{width:180px;}
+#rightSection #selector fieldset{width:170px!important;}
+/*#selector .ui-slider ol, .ui-slider dl{margin-left:-6px;}*/
+#rightSection #selector #selectorUnit{width:780px;}
+
+
+/*--------------------------------
+menuList
+--------------------------------*/
+#menuList{
+	display:block;
+	width:170px;
+	padding-bottom:10px;
+	position:relative;
+	z-index:992;
+	font-size:11px!important;
+	-moz-border-radius-topleft:5px;
+	-webkit-border-top-left-radius:5px;
+}
+#menuList .root{
+	padding-left:10px;
+	color:#fff;
+	background-color:#5983ae;
+	font-size:13px;
+	font-family:"Myriad Pro",Arial,Helvetica,sans-serif;
+	-moz-border-radius-topleft:5px;
+	-webkit-border-top-left-radius:5px;
+}
+#menuList .root a{display:block; padding:10px 0 9px;}
+#menuList .root a.here{padding-left:10px; margin-left:-10px; width:168px; color:#000; background:url(/media/common/bg_menu_active.png) left top no-repeat; cursor:text; -moz-border-radius-topleft:4px; -webkit-border-top-left-radius:4px;}
+#menuList .root a.here:hover{text-decoration:none;}
+#menuList #chapTop{padding:8px 0 5px 15px; margin-top:0; background:#f4f4f4 url(/media/common/bg_menu_active.png) left -200px no-repeat;}
+#menuList #chapTop a{color:#0785c4; font-weight:bold;}
+#menuList a{color:#fff;}
+#menuList ul{margin-top:5px; padding-left:5px;}
+#menuList ul.L1{padding-left:15px;}
+#menuList li{margin-bottom:5px; /zoom:normal; _word-break:break-all;/*IE6*/}
+#menuList li.here{font-weight:bold;}
+#menuList li.here a{color:#000; background:url(/media/common/bg_menu_active.png) left top no-repeat; padding:10px 0; display:block; cursor:text;}
+#menuList li.here a:hover{text-decoration:none;}
+#menuList ul li.here ul{background:#f4f4f4 url(/media/common/bg_menu_active.png) left -200px no-repeat; padding-top:10px; padding-bottom:5px; margin-top:0;}
+#menuList ul li.here ul a{color:#0785C4; font-weight:bold; padding:0;}
+#menuList ul li.here ul ul{display:none;}
+#menuList ul li.here ul{margin-left:-15px;}
+#menuList ul li.here ul li{margin-left:15px;}
+#menuList ul ul li.here ul{margin-left:-20px;}
+#menuList ul ul li.here ul li{margin-left:20px;}
+#menuList ul ul ul li.here ul{margin-left:-25px;}
+#menuList ul ul ul li.here ul li{margin-left:25px;}
+#menuList ul ul ul ul li.here ul{margin-left:-30px;}
+#menuList ul ul ul ul li.here ul li{margin-left:30px;}
+#menuList ul ul ul ul ul li.here ul{margin-left:-35px;}
+#menuList ul ul ul ul ul li.here ul li{margin-left:35px;}
+#menuList ul ul ul ul ul ul li.here ul{margin-left:-40px;}
+#menuList ul ul ul ul ul ul li.here ul li{margin-left:40px;}
+#menuList ul ul ul ul ul ul ul li.here ul{margin-left:-45px;}
+#menuList ul ul ul ul ul ul ul li.here ul li{margin-left:45px;}
+#menuList ul ul ul ul ul ul ul ul li.here ul{margin-left:-50px;}
+#menuList ul ul ul ul ul ul ul ul li.here ul li{margin-left:50px;}
+#menuList ul ul ul ul ul ul ul ul ul li.here ul{margin-left:-55px;}
+#menuList ul ul ul ul ul ul ul ul ul li.here ul li{margin-left:55px;}
+#menuList .L1 li.here a{margin-left:-15px; padding-left:15px; width:163px;}
+#menuList .L2 li.here a{margin-left:-20px; padding-left:20px; width:158px;}
+#menuList .L3 li.here a{margin-left:-25px; padding-left:25px; width:153px;}
+#menuList .L4 li.here a{margin-left:-30px; padding-left:30px; width:148px;}
+#menuList .L5 li.here a{margin-left:-35px; padding-left:35px; width:143px;}
+#menuList .L6 li.here a{margin-left:-40px; padding-left:40px; width:138px;}
+#menuList .L7 li.here a{margin-left:-45px; padding-left:45px; width:133px;}
+#menuList .L8 li.here a{margin-left:-50px; padding-left:50px; width:128px;}
+#menuList .L9 li.here a{margin-left:-55px; padding-left:55px; width:123px;}
+#menuList .L10 li.here a{margin-left:-60px; padding-left:60px; width:118px;}
+#menuList ul li.here ul{margin-top:0;}
+#menuList ul li.here ul li a{color:#0785C4; background:none; height:auto; line-height:1.3; display:inline; cursor:pointer;}
+#menuList ul li.here ul li a:hover{text-decoration:underline;}
+
+#leftSection .related{margin:20px 15px; color:#fff;}
+#leftSection .related a{color:#fff;}
+
+
+
+/*--------------------------------
+clearfix
+--------------------------------*/
+.clearfix,
+.tc{/zoom:1;} /* IE6,7 */
+
+.clearfix:after,
+.tc:after{content:''; display:block; clear:both; height:0;}
