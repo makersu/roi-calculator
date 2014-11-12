@@ -96,7 +96,7 @@
   position: absolute;
   top: 40px;
   left: 15px;
-  font-size: 48px;
+  font-size: 43px;
   color: #303030;
 }
 /* line 85, ../sass/main.scss */
@@ -131,7 +131,7 @@
 }
 /* line 121, ../sass/main.scss */
 .calCharts .pieChart .ac-chart {
-  margin: 0 auto;
+  margin: 0 auto 0 50px;
   display: block;
   float: inherit;
 }

@@ -32,13 +32,13 @@
     </div>
     <div class="calCharts">
         <div class="col time">
-            <div class="saved">{{ results.totaltimesaved }}<span class="unit">hr</span></div>
+            <div class="saved">{{ results.totaltimesaved | number:0 }}<span class="unit">hr</span></div>
             <div ac-chart="'pie'" ac-data="timeSavedPie" ac-config="timeSavedPieConfig" id='timePieChart' class='pieChart'></div>
             <hr>
             <div ac-chart="'bar'" ac-data="timeSavedBar" ac-config="timeSavedBarConfig" id='timeBarChart' class='barChart'></div>
         </div>
         <div class="col cost">
-            <div class="saved"><span class="unit">$</span>{{ results.totalcostsaved }}</div>
+            <div class="saved"><span class="unit">$</span>{{ results.totalcostsaved | number:0 }}</div>
             <div ac-chart="'pie'" ac-data="costSavedPie" ac-config="costSavedPieConfig" id='costPieChart' class='pieChart'></div>
             <hr>
             <div ac-chart="'bar'" ac-data="costSavedBar" ac-config="costSavedBarConfig" id='costBarChart' class='barChart'></div>

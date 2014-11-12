@@ -36,6 +36,7 @@ angular.module('roiCalculatorApp')
     $scope.timeSavedPieConfig = {
       title: 'Time Saved',
       labels: false,
+      tooltips: true,
       mouseover: function() {},
       mouseout: function() {},
       click: function() {},
@@ -45,6 +46,7 @@ angular.module('roiCalculatorApp')
     $scope.costSavedPieConfig = {
       title: 'Cost Saved',
       labels: false,
+      tooltips: true,
       mouseover: function() {},
       mouseout: function() {},
       click: function() {},
@@ -191,6 +193,6 @@ angular.module('roiCalculatorApp')
     $timeout(function() {
       calCharts = angular.element(body.querySelector('.calCharts'));
       calCharts.hide();
-    }, 10);
+    }, 100);
 
   });
