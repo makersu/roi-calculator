@@ -5,23 +5,38 @@
         <h2>Power of Two ROI Calculator</h2>
         <div class="inputContainer">
             <div class="row">
-                <label>Your Solution of Developing Hours</label>
+                <label>RTOS/Middleware Solution Development</label>
+                <div class="info">
+                    <i class="tip" popover-trigger="mouseenter" popover-placement="left" popover-title="{{ inputList[0].title }}" popover="{{ inputList[0].tooltip }}">i</i>
+                </div>
                 <input type="text" ng-model="input[0]">
             </div>
             <div class="row">
-                <label>Debugging Solution of Hours</label>
+                <label>Porting RTOS/Middleware</label>
+                <div class="info">
+                    <i class="tip" popover-trigger="mouseenter" popover-placement="left" popover-title="{{ inputList[1].title }}" popover="{{ inputList[1].tooltip }}">i</i>
+                </div>
                 <input type="text" ng-model="input[1]">
             </div>
             <div class="row">
-                <label>Porting a New Solution of Hours</label>
+                <label>Debugging RTOS/Middleware</label>
+                <div class="info">
+                    <i popover-trigger="mouseenter" popover-placement="left" popover-title="{{ inputList[2].title }}" popover="{{ inputList[2].tooltip }}">i</i>
+                </div>
                 <input type="text" ng-model="input[2]">
             </div>
-            <div class="row">
-                <label>Training New Engineers on OS of Hours</label>
+            <div class="row many">
+                <label>Number of hours spent on training new Engineers on RTOS/Middleware</label>
+                <div class="info">
+                    <i popover-trigger="mouseenter" popover-placement="left" popover-title="{{ inputList[3].title }}" popover="{{ inputList[3].tooltip }}">i</i>
+                </div>
                 <input type="text" ng-model="input[3]">
             </div>
             <div class="row">
-                <label>In Certification of Hours</label>
+                <label>Hours of Certification and Standards Compliance</label>
+                <div class="info">
+                    <i class="last" popover-trigger="mouseenter" popover-placement="left" popover-title="{{ inputList[4].title }}" popover="{{ inputList[4].tooltip }}">i</i>
+                </div>
                 <input type="text" ng-model="input[4]">
             </div>
             <div class="row">

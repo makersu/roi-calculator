@@ -9,4 +9,4 @@
  * Main module of the application.
  */
 angular
-  .module('roiCalculatorApp', ['angularCharts']);
+  .module('roiCalculatorApp', ['angularCharts', 'ui.bootstrap']);

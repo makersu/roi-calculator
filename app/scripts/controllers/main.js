@@ -15,6 +15,13 @@ angular.module('roiCalculatorApp')
       'Karma'
     ];
     
+    $scope.inputList = [
+      { title: 'RTOS/Middleware Solution Development', tooltip: 'This question is asking the number of hours you will be spending on development of custom RTOS/Middleware' },
+      { title: 'Porting RTOS/Middleware', tooltip: 'This question is asking the number of hours you will be spending on Porting of RTOS/Middleware Software to a new platform' },
+      { title: 'Debugging RTOS/Middleware', tooltip: 'This question is asking the number of hours you will be spending on Debugging of RTOS/Middleware S/W on a new platform' },
+      { title: 'Number of hours spent on training new Engineers on RTOS/Middleware', tooltip: 'Number of hours spent on training when you hire a new Engineers' },
+      { title: 'Hours of Certification and Standards Compliance', tooltip: 'Many Application or Design require adherence to various certification and Standards compliance. This question is asking How much would you save with a qualified off the shell Solution Vs a Custom Solution? For Example: EN50128 / IEC 61508 SIL2<br>IEC 61508 SIL3<br>FDA 510(k) Medical Class I<br>FDA 510(k) Medical Class II<br>IEC 62304 SIL3<br>DO-178B Level A<br>DO-178B Level B<br>DO-178B Level C'}
+    ];
     $scope.input = [];
     $scope.results = {
     	hours:[],
@@ -33,8 +40,12 @@ angular.module('roiCalculatorApp')
 
     var fomula = [0.7,0.8,0.5,0.3,0.5];
 
+    var barTooltips = function(data) {
+      return data.series + ': ' + data.value;
+    };
+
     $scope.timeSavedPieConfig = {
-      title: 'Time Saved',
+      title: 'Total Time Saved',
       labels: false,
       tooltips: true,
       mouseover: function() {},
@@ -44,7 +55,7 @@ angular.module('roiCalculatorApp')
       colors: [ '#254b8a', '#dbdbdb' ]
     };
     $scope.costSavedPieConfig = {
-      title: 'Cost Saved',
+      title: 'Total Cost Saved',
       labels: false,
       tooltips: true,
       mouseover: function() {},
@@ -61,9 +72,10 @@ angular.module('roiCalculatorApp')
       mouseout: function() {},
       click: function() {},
       "legend": {
-        "display": false,
-        "position": "right"
+        "display": true,
+        "position": "bottom"
       },
+      tooltips: barTooltips,
       innerRadius: 0, // applicable on pieCharts, can be a percentage like '50%'
       colors: [ '#254b8a', '#669934' ],
       yAxisTickFormat: 's'
@@ -75,9 +87,10 @@ angular.module('roiCalculatorApp')
       mouseout: function() {},
       click: function() {},
       "legend": {
-        "display": false,
-        "position": "right"
+        "display": true,
+        "position": "bottom"
       },
+      tooltips: barTooltips,
       innerRadius: 0, // applicable on pieCharts, can be a percentage like '50%'
       colors: [ '#254b8a', '#669934' ]
     };
@@ -131,7 +144,7 @@ angular.module('roiCalculatorApp')
       };
 
       $scope.timeSavedBar = {
-        series: [ 'Cost', 'w/PO2 Savings' ],
+        series: [ 'Time', 'w/PO2 Savings' ],
         data: [
           {
             x: 'Developing',
