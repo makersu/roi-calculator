@@ -70,6 +70,7 @@
 			text-align: center;
 			font-family: "Lucida Console", Monaco;
 			font-style: italic;
+			line-height: 17px;
 		}
 		input {
 			width: 33%;
@@ -202,6 +203,11 @@
 	.popover-content {
 		color: #343434;
 		padding: 10px 20px;
+	}
+	&.left {
+		.arrow {
+			right: -10px;
+		}
 	}
 }
 .tip {
